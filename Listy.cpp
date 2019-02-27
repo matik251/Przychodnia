@@ -179,7 +179,7 @@ inline void Pacjenci::wczytajListe()
 	string s, id, imie, nazwisko, plec, dataUr, PESEL, wzrost, waga;
 	int srednik;
 	fstream plik;
-	plik.open("lekarze.csv", ios::in);
+	plik.open("pacjenci.csv", ios::in);
 	while (!plik.eof()) {
 		plik >> s;
 		srednik = s.find(";");
@@ -240,7 +240,7 @@ inline void Pacjenci::zapiszListe()
 	Osoba *temp = this->head;
 
 	fstream plik;
-	plik.open("lekarze.csv", ios::out);
+	plik.open("pacjenci.csv", ios::out);
 	while (temp != nullptr) {
 
 		plik << temp->id << ";" << temp->nazwisko << ";" << temp->imie << ";" << temp->plec << ";" << temp->dataUrodzenia << ";" << temp->PESEL << ";" << temp->wzrost << ";" << temp->waga;
